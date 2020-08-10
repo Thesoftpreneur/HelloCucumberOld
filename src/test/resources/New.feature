@@ -10,6 +10,7 @@ Feature: The car drives
     When The driver drives safetly
     Then The driver is at "school"
 
+  @FirstScenario
   Scenario: The driver goes to work
     Given The driver drives to "work"
     When The driver drives safetly
