@@ -18,14 +18,14 @@ public class LoginSteps {
 
     WebDriver driver;
 
-    @Before()
-    public void setup() {
-        //System.setProperty("webdriver.gecko.driver", "[path//to//driver.exe]");
-        this.driver = new ChromeDriver();
-        this.driver.manage().window().maximize();
-        this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-
-    }
+//    @Before()
+//    public void setup() {
+//        //System.setProperty("webdriver.gecko.driver", "[path//to//driver.exe]");
+//        this.driver = new ChromeDriver();
+//        this.driver.manage().window().maximize();
+//        this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+//
+//    }
 
     @Given("User navigates to stackoverflow website")
     public void userNavigatesToStackoverflowWebsite() {
