@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.pages.ContactForm;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,12 +14,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class ContactForm {
+public class ContactFormSteps {
     WebDriver driver;
+    ContactForm contactForm;
 
     @When("I access webdriver university")
     public void iAccessWebdriverUniversity() {
         this.driver = new ChromeDriver();
+        this.contactForm = new ContactForm(driver);
         this.driver.manage().window().maximize();
         this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.get("http://webdriveruniversity.com/");
@@ -37,6 +40,7 @@ public class ContactForm {
             driver.switchTo().window(winHandle);
         }
         driver.findElement(By.name("first_name")).sendKeys("Nanananana");
+        contactForm.setNameField("lolo");
     }
 
     @And("I enter a last name")
