@@ -40,19 +40,30 @@ public class ContactFormSteps {
     }
 
     @And("I enter a first name")
-    public void iEnterAFirstName() {
+    public void iEnterAFirstName(String firstName) {
+        iEnterAFirstNameWithParam("nananana");
+    }
+
+
+    @And("I enter a first name {string}")
+    public void iEnterAFirstNameWithParam(String firstName) {
         @SuppressWarnings("unused")
         String winHandleBefore = driver.getWindowHandle();
         for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
-        driver.findElement(By.name("first_name")).sendKeys("Nanananana");
-        contactForm.setNameField("lolo");
+        //driver.findElement(By.name("first_name")).sendKeys(firstName);
+        contactForm.setNameField(firstName);
     }
 
     @And("I enter a last name")
     public void iEnterALastName() {
-        driver.findElement(By.name("last_name")).sendKeys("bobobob");
+        iEnterALastNameWithParam("OMOMOMO");
+    }
+
+    @And("I enter a last name {string}")
+    public void iEnterALastNameWithParam(String lastName) {
+        driver.findElement(By.name("last_name")).sendKeys(lastName);
     }
 
     @And("I enter email address")
