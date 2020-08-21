@@ -1,6 +1,6 @@
 Feature: Login into account
   Existing user should be able to login to account using correct credentials
-
+  @important
   Scenario: Log into account with correct credentials
     Given User navigates to stackoverflow website
     And User clicks on the login button on homepage
@@ -8,3 +8,4 @@ Feature: Login into account
     And User enters a valid password
     When User click on the login button
     Then User should be taken to the successful login page
+    And Close Browser
