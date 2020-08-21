@@ -40,7 +40,7 @@ public class ContactFormSteps {
     }
 
     @And("I enter a first name")
-    public void iEnterAFirstName(String firstName) {
+    public void iEnterAFirstName() {
         iEnterAFirstNameWithParam("nananana");
     }
 
