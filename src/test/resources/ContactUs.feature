@@ -14,6 +14,7 @@ Feature: Submit data to webdriveruniversity.com using the contact us form
       | comment one | comment two |
     When I click on the submit button
     Then the information should successfully e submitted via the contact us form
+    And Close Browser
 
   Scenario: Enter information to the contact us form, when click on the reset button then infomation should be removed
     And I enter a first name
@@ -23,3 +24,4 @@ Feature: Submit data to webdriveruniversity.com using the contact us form
       | comment one | comment two |
     When I click on the reset button
     Then all information which were listed by the user on the contact us form should be now removed
+    And Close Browser

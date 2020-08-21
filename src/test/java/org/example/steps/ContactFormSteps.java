@@ -1,6 +1,7 @@
 package org.example.steps;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -17,6 +18,12 @@ import java.util.concurrent.TimeUnit;
 public class ContactFormSteps {
     WebDriver driver;
     ContactForm contactForm;
+
+    @And("Close Browser")
+    public void closeBrowser() {
+        driver.manage().deleteAllCookies();
+        driver.quit();
+    }
 
     @When("I access webdriver university")
     public void iAccessWebdriverUniversity() {

@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features={"src/test/resources"},
         monochrome = true,
+        //dryRun = true,
         plugin = {"pretty", "html:target/cucumber-reports/report.html", "json:target/cucumber-reports/Cucumber.json"}
 
 )

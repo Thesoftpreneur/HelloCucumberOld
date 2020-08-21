@@ -29,6 +29,9 @@ public class LoginSteps {
 
     @Given("User navigates to stackoverflow website")
     public void userNavigatesToStackoverflowWebsite() {
+        this.driver = new ChromeDriver();
+        this.driver.manage().window().maximize();
+        this.driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.get("https://stackoverflow.com/");
     }
 
@@ -56,7 +59,7 @@ public class LoginSteps {
     @Then("User should be taken to the successful login page")
     public void userShouldBeTakenToTheSuccessfulLoginPage() throws InterruptedException {
         Thread.sleep(3000);
-        WebElement zalogujSieDoFB = driver.findElement(By.xpath("//*[contains(text(), \"Zaloguj się do Facebooka\")]"));
+        WebElement zalogujSieDoFB = driver.findElement(By.xpath("//*[@id=\"header_block\"]//*[contains(text(), \"Zaloguj się do Facebooka\")]"));
         Assert.assertTrue(zalogujSieDoFB.isDisplayed());
 
     }
