@@ -7,11 +7,17 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features={"src/test/resources"},
+        glue={"org.example.steps"},
         monochrome = true,
         //dryRun = true,
-        plugin = {"pretty", "html:target/cucumber-reports/report.html", "json:target/cucumber-reports/Cucumber.json"}
+        plugin = {"pretty",
+                "html:target/cucumber-reports/report.html",
+                "json:target/cucumber-reports/Cucumber.json",
+        //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/cucumber-reports/report.html"
+        }
 
 )
 
 public class HelloRunner {
+
 }
